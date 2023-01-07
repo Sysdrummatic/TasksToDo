@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+  </head>
+  <body>
+    <script>
+      console.log("----Insert button with script----");
+      let button1 = "Click Me";
+      let buttonElement = document.createElement("button");
+      buttonElement.innerText = button1;
+      document.body.appendChild(buttonElement);
+    </script>
+    <script>
+      document.title = "SysdrummaticPage";
+    </script>
+    <script>
+      function changePageTitle() {
+        document.title = "Exercises";
+      }
+    </script>
+    <button>
+      Back to old title
+      <script>
+        changePageTitle();
+      </script>
+    </button>
+
+    <script>
+      function greeting(name) {
+        console.log("Hello " + name);
+      }
+
+      greeting("Łukasz");
+      //   let element = document.createElement("div");
+      //   element.innerText = greetingMsg;
+      //   document.body.appendChild(element);
+    </script>
+
+    <script>
+      function toUpper(str) {
+        let upperCase = str.toUpperCase();
+        console.log(upperCase);
+      }
+
+      let result = toUpper("bigletters");
+      //   let element = document.createElement("div");
+      //   element.innerText = result;
+      //   document.body.appendChild(element);
+    </script>
+
+    <script>
+      function imperialToMetric(lengthInInches) {
+        let convertedCm = lengthInInches * 0.39;
+        console.log(lengthInInches + " inches equals " + convertedCm + " cm.");
+      }
+      imperialToMetric(5);
+    </script>
+  </body>
+</html>
