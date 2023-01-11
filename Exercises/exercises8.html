@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <button id="todo-button" onclick="changeButtonText()">Add ToDo</button>
-        <script>
-            function changeButtonText() {
-                let buttonText = button.getElementById("todo-button");
-                buttonText.innerText = button.changeButtonText("Text");
-                let fff = button;
-            }
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="todo-button" onclick="changeButtonText()">Add ToDo</button>
+    <script>
+      function changeButtonText() {
+        let buttonText = document.getElementById("todo-button");
+        buttonText.innerText = "Text";
+      }
+    </script>
+
+    <div id="counter">0</div>
+    <button onclick="counterUp()">Up</button>
+    <button onclick="counterDown()">Down</button>
+
+    <script>
+      let value = 0;
+
+      function counterUp() {
+        let counter = document.getElementById("counter");
+        value = value + 1;
+        counter.innerText = value;
+      }
+
+      function counterDown() {
+        let counter = document.getElementById("counter");
+        value = value - 1;
+        counter.innerText = value;
+      }
+    </script>
+    <div>
+      <input id="addToDiv" />
+      <button onclick="addToDiv()">Add it to the DIV below</button>
+      <div id="addTextHere"></div>
+      <script>
+        function addToDiv() {
+          let textbox = document.getElementById("addToDiv");
+          let toDiv = document.getElementById("addTextHere");
+          //   console.log(textbox);
+          //   console.log(toDiv);
+          toDiv.innerText = textbox.value;
+        }
+      </script>
+    </div>
+  </body>
 </html>
