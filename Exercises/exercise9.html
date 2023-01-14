@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button id="apple" onclick="addToChart()">Apple</button>
-    <button id="tomato" onclick="addToChart()">Tomato</button>
-    <button id="eggs" onclick="addToChart()">Eggs</button>
-    <button onclick="clearChart()">Clear</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="apple" onclick="addToChart()">Apple</button>
+        <button id="tomato" onclick="addToChart()">Tomato</button>
+        <button id="eggs" onclick="addToChart()">Eggs</button>
+        <button onclick="clearChart()">Clear</button>
 
-    <div id="chart">sdvgssdvg</div>
+        <div id="chart">sdvgssdvg</div>
 
-    <script>
-      let chart = [];
-      let ids = ["apple", "tomato", "eggs"];
+        <script>
+            let chart = [];
+            let ids = ["apple", "tomato", "eggs"];
 
-      function addToChart() {
-        let toChart = document.getElementById("apple");
-        console.log(toChart);
-        let text = toChart.innerText;
-        chart.push(text);
-        console.log(chart);
-      }
+            function addToChart() {
+                let toChart = document.getElementById();
 
-      function clearChart() {
-        chart = [];
-        document.getElementById("chart").innerHTML = "";
-      }
+                let text = toChart.innerText;
+                console.log(text);
+                chart.push(text);
+                console.log(chart);
+            }
 
-      function render() {
-        document.getElementById("chart").innerHTML = "";
+            function clearChart() {
+                chart = [];
+                document.getElementById("chart").innerHTML = "";
+            }
 
-        todos.forEach(function (todoTitle) {
-          let element = document.createElement("div");
-          element.innerText = todoTitle;
-          let todoList = document.getElementById("todo-list");
-          todoList.appendChild(element);
-        });
-      }
-    </script>
-  </body>
+            function render() {
+                document.getElementById("chart").innerHTML = "";
+
+                todos.forEach(function (todoTitle) {
+                    let element = document.createElement("div");
+                    element.innerText = todoTitle;
+                    let todoList = document.getElementById("todo-list");
+                    todoList.appendChild(element);
+                });
+            }
+        </script>
+    </body>
 </html>
 
 <!-- // To be removed -->
