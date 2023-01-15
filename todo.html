@@ -17,9 +17,9 @@
 
       let todos;
 
-      const savedTodos = JSON.pares(localStorage.getItem("todos"));
+      const savedTodos = JSON.parse(localStorage.getItem("todos"));
 
-      if (Array.isArray(saveTodos)) {
+      if (Array.isArray(savedTodos)) {
         todos = savedTodos;
       } else {
         todos = [
@@ -53,6 +53,8 @@
         saveTodos();
       }
 
+      function doneTodo(isDone) {}
+
       function saveTodos() {
         localStorage.setItem("todos", JSON.stringify(todos));
       }
@@ -62,14 +64,26 @@
         document.getElementById("todo-list").innerHTML = "";
 
         todos.forEach(function (todo) {
+          // Div creation with title and due date
           const element = document.createElement("div");
           element.innerText = todo.title + " " + todo.dueDate;
+
+          // Check box creation
+          const checkBoxDone = document.createElement("INPUT");
+          checkBoxDone.setAttribute("type", "checkbox");
+          checkBoxDone.onchange = doneTodo; // Function to be finished
+          checkBoxDone.id = todo.id;
+          element.prepend(checkBoxDone);
+
+          // Delete button creation
           const deleteButton = document.createElement("button");
           deleteButton.innerText = "Delete";
           deleteButton.style = "margin-left: 12px";
           deleteButton.onclick = deleteTodo;
           deleteButton.id = todo.id;
           element.appendChild(deleteButton);
+
+          // Adding to do list by ID
           const todoList = document.getElementById("todo-list");
           todoList.appendChild(element);
         });
@@ -96,6 +110,28 @@
         removeTodo(idToDelete);
         render();
       }
+
+      function doneTodo(event) {
+        const checkbox = event.target;
+        const isDone = checkbox.checked;
+        console.log("Kliknąłeś zadanie o id: " + checkbox.id);
+        console.log(isDone);
+        //doneTodo(isDone);
+
+        render();
+      }
+
+      // function removeTodo(idToDelete) {
+      //   todos = todos.filter(function (todo) {
+      //     if (todo.id === idToDelete) {
+      //       return false;
+      //     } else {
+      //       return true;
+      //     }
+      //   });
+
+      //   saveTodos();
+      // }
     </script>
   </body>
 </html>
